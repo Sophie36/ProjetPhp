@@ -30,6 +30,9 @@ if(isset($_POST['valider'])){
    }
     
 }
+//Deconnexion
+//$_SESSION=array();
+//session_destroy();
 ?>
 <!--suite et fin d'authentification.php-->
 <form method="POST" action="">

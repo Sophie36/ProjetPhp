@@ -11,5 +11,8 @@ if (!isset($_SESSION['login'])){
 <body>
     <?php
         echo'Bonjour '.$_SESSION['login'];
+        
     ?>
+    </br>
+    <a href="deconnexion.php">Déconnexion</a>
 </body>
