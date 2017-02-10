@@ -1,15 +1,15 @@
 <?php
 
 require_once('include/connexion.php');
-require_once('include/infoconnexion.php');
+require_once('include/infoConnexion.php');
 require_once('include/executeRequete.php');
 
 $cnx=connexion(UTILISATEUR,MOTDEPASSE,SERVER,BASEDEDONNEES);
 
-if(isset($_POST['Valider'])){
+if(isset($_POST['valider'])){
    $tmp_login=$_POST['f_login'];
    $tmp_pw=$_POST['f_pw'];
-   $sql="SELECT * FROM utilisateurs WHERE nom='$tmp_login'";
+   $sql="SELECT * FROM utilisateurs WHERE login='$tmp_login'";
    $idRequete=executeRequete($cnx,$sql);
    if($idRequete->rowCount()==1){
        $row=$idRequete->fetch(PDO::FETCH_NUM);
@@ -21,8 +21,12 @@ if(isset($_POST['Valider'])){
            $_SESSION['login']=$tmp_login;
            $_SESSION['nom']=$row[1];
            $_SESSION['prenom']=$row[0];
-        header('Local:m:index.php');
+           header('location:index.php');
+       }else{
+           echo "mot de passe incorect";
        }
+   }else {
+       echo "le login est pas bon";
    }
     
 }

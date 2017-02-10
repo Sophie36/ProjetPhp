@@ -10,6 +10,6 @@ if (!isset($_SESSION['login'])){
 </head>
 <body>
     <?php
-        echo'Bonjour'.$_SESSION['login'];
+        echo'Bonjour '.$_SESSION['login'];
     ?>
 </body>
