@@ -23,10 +23,10 @@ if(isset($_POST['valider'])){
            $_SESSION['prenom']=$row[0];
            header('location:index.php');
        }else{
-           echo "mot de passe incorect";
+           echo "Le mot de passe est incorrect";
        }
-   }else {
-       echo "le login est pas bon";
+   }else{
+       echo "Le login est pas bon";
    }
     
 }
